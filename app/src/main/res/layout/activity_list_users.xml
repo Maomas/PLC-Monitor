@@ -21,6 +21,14 @@
         android:layout_height="70dp"
         android:layout_marginTop="40dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Users List"
+            android:fontFamily="serif"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"/>
+
 
     <TextView
         android:id="@+id/tv_userslist_list"
@@ -30,13 +38,17 @@
 
     <Button
         android:text="Empty table"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_userslist_emptytable"/>
 
     <Button
         android:text="Back"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_userslist_back"/>
 

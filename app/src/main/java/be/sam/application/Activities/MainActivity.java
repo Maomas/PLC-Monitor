@@ -17,8 +17,9 @@ import be.sam.application.R;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnSignup;
-    private Button btnList;
+    private Button btnUsersList;
     private Button btnLogin;
+    private Button btnAutomatonsList;
     private TextView tvConnectedUser;
 
     private SharedPreferences prefs;
@@ -30,8 +31,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnSignup = (Button) findViewById(R.id.btn_main_signup);
-        btnList = (Button) findViewById(R.id.btn_main_list);
+        btnUsersList = (Button) findViewById(R.id.btn_main_users);
         btnLogin = (Button) findViewById(R.id.btn_main_login);
+        btnAutomatonsList = (Button) findViewById(R.id.btn_main_automatons);
+
         tvConnectedUser = (TextView) findViewById(R.id.tv_main_connectedUser);
 
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             tvConnectedUser.setText("Connected user : "+prefs.getString("email","NULL"));
         }
         if(prefs.getInt("rights",2) != 2){
-            btnList.setVisibility(View.GONE);
+            btnUsersList.setVisibility(View.GONE);
         }
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +56,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnList.setOnClickListener(new View.OnClickListener() {
+        btnUsersList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent listActivity = new Intent(getApplicationContext(), ListUsersActivity.class);
+                startActivity(listActivity);
+                finish();
+            }
+        });
+
+        btnAutomatonsList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listActivity = new Intent(getApplicationContext(), ListAutomatonsActivity.class);
                 startActivity(listActivity);
                 finish();
             }
