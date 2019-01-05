@@ -68,8 +68,7 @@ public class User {
         return  "ID : "+this.getId()+ "\n"+
                 "Name : "+this.getFirstName()+" "+this.getLastName()+"\n"
                 + "Email : "+this.getEmail() +"\n"
-                +"Rights : " +rights+
-                "\n\n";
+                +"Rights : " +rights;
     }
 
 

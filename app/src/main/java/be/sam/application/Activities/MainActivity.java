@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         btnAutomatonsList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent listActivity = new Intent(getApplicationContext(), ListAutomatonsActivity.class);
+                Intent listActivity = new Intent(getApplicationContext(), ListApisActivity.class);
                 startActivity(listActivity);
                 finish();
             }

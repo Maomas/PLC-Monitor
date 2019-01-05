@@ -22,7 +22,7 @@
         <activity android:name=".Activities.ListUsersActivity" />
         <activity android:name=".Activities.SignupActivity" />
         <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.ListAutomatonsActivity"></activity>
+        <activity android:name=".Activities.ListApisActivity"></activity>
     </application>
 
 </manifest>

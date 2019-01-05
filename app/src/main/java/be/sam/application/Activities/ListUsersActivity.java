@@ -21,7 +21,6 @@ import be.sam.application.Database.User;
 
 public class ListUsersActivity extends Activity {
 
-    //private TextView tvList;
     private DbManager dbm;
     private List<User> users;
     private Button btnEmptyTable;
@@ -75,7 +74,11 @@ public class ListUsersActivity extends Activity {
             ll_popup.setVerticalGravity(1);
             ll_popup.setOrientation(LinearLayout.VERTICAL);
 
+            tv.setBackgroundResource(R.color.white);
 
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            lp.setMargins(0,0,0,20);
+            tv.setLayoutParams(lp);
             tv.setText(u.toString());
             tv.setId(u.getId());
 
@@ -110,7 +113,6 @@ public class ListUsersActivity extends Activity {
                             else rights = 0;
                             User u = new User(inputFirstname.getText().toString(), inputLastname.getText().toString(), inputEmail.getText().toString(), inputPassword.getText().toString(), rights);
                             u.setId(tv.getId());
-                            Log.i("MYSQLITE",Integer.toString(u.getRights()));
                             if(u.getRights() == 2) Toast.makeText(getApplicationContext(), "The super user cannot be deleted.", Toast.LENGTH_LONG).show();
                             else{
                                 dbm.deleteUser(u.getId(), u);

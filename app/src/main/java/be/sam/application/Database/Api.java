@@ -1,6 +1,6 @@
 package be.sam.application.Database;
 
-public class Automaton {
+public class Api {
 
 
     private int id;
@@ -10,6 +10,17 @@ public class Automaton {
     private int slot;
     private int type;
     private String databloc;
+
+    public Api() { }
+
+    public Api(String name, String ip, int rack, int slot, int type, String databloc) {
+        this.name = name;
+        this.ip = ip;
+        this.rack = rack;
+        this.slot = slot;
+        this.type = type;
+        this.databloc = databloc;
+    }
 
     public int getId() {
         return id;
@@ -65,6 +76,18 @@ public class Automaton {
 
     public void setDatabloc(String databloc) {
         this.databloc = databloc;
+    }
+
+    public String toString() {
+        String type;
+        if(getType() == 0) type = "Condtionnement de comprimés";
+        else type = "Asservissement de liquides";
+        return "Name : "+this.getName()+"\n"
+                +"IP : "+this.getIp()+"\n"
+                +"Rack : "+this.getRack()+"\n"
+                +"Slot : "+this.getSlot()+"\n"
+                +"Type : "+type+"\n"
+                +"Databloc : "+this.getDatabloc();
     }
 
 
