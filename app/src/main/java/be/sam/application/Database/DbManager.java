@@ -137,6 +137,12 @@ public class DbManager extends SQLiteOpenHelper {
         return cursorToUser(c);
     }
 
+    public Api getApiByName(String name){
+        Cursor c = this.getReadableDatabase().query(TABLE_NAME_API, new String[] {COL_ID, COL_NAME, COL_IP, COL_RACK, COL_SLOT, COL_TYPE, COL_DATABLOC},
+                COL_NAME + " LIKE \""+ name +"\"", null, null, null, COL_NAME);
+        return cursorToApi(c);
+    }
+
     public List<Api> getApis() {
         String select = "select * from "+TABLE_NAME_API+" order by "+COL_ID;
 
@@ -175,6 +181,28 @@ public class DbManager extends SQLiteOpenHelper {
         Log.i("MYSQLITE","User "+u.getFirstName()+" "+u.getLastName()+" selected.");
         return u;
 
+    }
+
+    public Api cursorToApi(Cursor c){
+        if(c.getCount() == 0){
+            c.close();
+            return null;
+        }
+        c.moveToFirst();
+
+        Api a = new Api();
+        a.setId(c.getInt(NUM_COL_ID));
+        a.setName(c.getString(NUM_COL_NAME));
+        a.setIp(c.getString(NUM_COL_IP));
+        a.setRack(c.getInt(NUM_COL_RACK));
+        a.setSlot(c.getInt(NUM_COL_SLOT));
+        a.setType(c.getInt(NUM_COL_TYPE));
+        a.setDatabloc(c.getString(NUM_COL_DATABLOC));
+
+        c.close();
+
+        Log.i("MYSQLITE", "Api "+a.getName()+" selected.");
+        return a;
     }
 
     public void updateUser(int id, User u){

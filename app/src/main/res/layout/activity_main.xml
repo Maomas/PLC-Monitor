@@ -47,14 +47,25 @@
         android:layout_marginTop="10dp"
         android:text="Log In"/>
 
+
+
     <Button
-        android:id="@+id/btn_main_automatons"
+        android:text="Tablet Packaging"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_main_tablets"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Automatons List"/>
+        android:layout_marginRight="10dp"/>
+
+    <Button
+        android:text="Liquid Level Servo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_main_liquids"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
     <Button
         android:id="@+id/btn_main_users"

@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSignup;
     private Button btnUsersList;
     private Button btnLogin;
-    private Button btnAutomatonsList;
+    private Button btnTabletsApi;
+    private Button btnLiquidsApi;
     private TextView tvConnectedUser;
 
     private SharedPreferences prefs;
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         btnSignup = (Button) findViewById(R.id.btn_main_signup);
         btnUsersList = (Button) findViewById(R.id.btn_main_users);
         btnLogin = (Button) findViewById(R.id.btn_main_login);
-        btnAutomatonsList = (Button) findViewById(R.id.btn_main_automatons);
+        btnTabletsApi = (Button) findViewById(R.id.btn_main_tablets);
+        btnLiquidsApi = (Button) findViewById(R.id.btn_main_liquids);
+
 
         tvConnectedUser = (TextView) findViewById(R.id.tv_main_connectedUser);
 
@@ -64,20 +67,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAutomatonsList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent listActivity = new Intent(getApplicationContext(), ListApisActivity.class);
-                startActivity(listActivity);
-                finish();
-            }
-        });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(loginActivity);
+                finish();
+            }
+        });
+
+        btnTabletsApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tabletsApiActivity = new Intent(getApplicationContext(), TabletsActivity.class);
+                startActivity(tabletsApiActivity);
+                finish();
+            }
+        });
+
+        btnLiquidsApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent liquidsApiActivity = new Intent(getApplicationContext(), LiquidsActivity.class);
+                startActivity(liquidsApiActivity);
                 finish();
             }
         });

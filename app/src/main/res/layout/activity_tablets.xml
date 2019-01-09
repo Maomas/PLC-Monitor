@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.TabletsActivity"
+    android:background="@drawable/background">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_tablets_connectedUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/automaton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tablet Packaging"
+            android:fontFamily="serif"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connection Informations"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IP Address : "
+            android:layout_margin="5dp"/>
+
+        <EditText
+            android:id="@+id/ev_tablets_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rack : "
+            />
+
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/ev_tablets_rack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slot : "
+            />
+
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/ev_tablets_slot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_tablets_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datas"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_tablets_connectionType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connection type : disconnected"
+                />
+
+
+            <TextView
+                android:text="PLC Reference : disconnected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tablets_plc"/>
+
+            <TextView
+                android:text="Bottles number : disconnected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tablets_bottles"/>
+
+            <TextView
+                android:text="Pills number per bottle  : disconnected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_tablets_pills"/>
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:id="@+id/pb_tablets_progressionS7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:max="500"
+            android:visibility="visible"
+            />
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_tablets_connectionS7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connection"/>
+
+        <Button
+            android:text="Modifiy datas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_tablets_modify"/>
+
+
+        <Button
+            android:text="Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_tablets_back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
